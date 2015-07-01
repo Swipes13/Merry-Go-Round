@@ -20,10 +20,13 @@ public class Renderer implements GLSurfaceView.Renderer {
 
     private float[] _projectionMatrix = new float[16];
     private float[] _clearColor;// = new float[4];
+
+    public Renderer() {
+
+    }
     @Override public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         _clearColor = new float[]{0.3f,0.8f,0.5f,1.0f};
-        GLES20.glClearColor(_clearColor[0],_clearColor[1],_clearColor[2],_clearColor[3]);
-        //_helloScreen = new GLScreen(new Point())
+        GLES20.glClearColor(_clearColor[0], _clearColor[1], _clearColor[2], _clearColor[3]);
     }
 
     @Override public void onSurfaceChanged(GL10 gl, int width, int height) {
@@ -41,6 +44,7 @@ public class Renderer implements GLSurfaceView.Renderer {
         final float far = 100.0f;
 
         Matrix.frustumM(_projectionMatrix, 0, left, right, bottom, top, near, far);
+
         _helloScreen.onSurfaceChanged(new Point(width, height));
         _menuScreen.onSurfaceChanged(new Point(width,height));
         _gameScreen.onSurfaceChanged(new Point(width,height));

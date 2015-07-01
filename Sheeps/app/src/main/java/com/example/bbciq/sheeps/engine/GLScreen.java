@@ -12,9 +12,9 @@ public class GLScreen {
     public void SetSize(Point size){_size = size;_center.x = _size.x/2;_center.y = _size.y/2;}
     public void SetSizeX(int x){_size.x = x;_center.x = _size.x/2;}
     public void SetSizeY(int y){_size.y = y;_center.y = _size.y/2;}
-    protected Point _size;
+    protected Point _size = new Point(200,200);
     public Point GetCenter(){return _center;}
-    protected Point _center;
+    protected Point _center = new Point(200,200);
 
     public GLScreen() {
     }
